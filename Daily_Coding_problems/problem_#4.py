@@ -19,12 +19,13 @@ def minPositiveInt(array):
     return minValue
 print(minPositiveInt([1, 2, 0]))
 
-def minValNotInArray(minValue,array):
-    if minValue > 1 or minValue == 0 :
+def minValNotInArray(minValue, array):
+    arraySet = set(array)
+    if minValue > 1 or minValue == 0:
         return 1
     else:
         for i in range(2, minValue+len(array)):
-            if i not in array:
+            if i not in arraySet:                   # instead of checking from the list check from the set
                 return i
 array = [1, 2, 0]
 minValue = minPositiveInt(array)
